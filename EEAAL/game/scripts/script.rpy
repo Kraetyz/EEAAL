@@ -30,7 +30,11 @@ label start:
 
     narrator "There's really nothing here."
     
-    show adam grasshopper at zoom_in
+    show adam grasshopper at zig_zag_vibrate
+    
+    narrator "Adam is getting upset at your presence."
+    
+    show adam grasshopper at whacky_zoom
     
     narrator "Leave."
 
