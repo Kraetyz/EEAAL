@@ -16,4 +16,4 @@ init:
     transform whacky_zoom:
         easeout 0.3 zoom 2.5
         linear 0.1 zoom 1.5
-        easein 0.5 zoom 4
+        easein 0.5 zoom 4 rotate 540
