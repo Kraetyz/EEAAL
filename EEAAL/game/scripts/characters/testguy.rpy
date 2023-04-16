@@ -9,7 +9,7 @@ define testguy_fitchoice = "white"
 
 # End Character specific vars
 
-# Animated images for body parts
+# Custom images
 
 image testguy_blink:
     "images/testguy/eyes_open.png"
@@ -26,7 +26,7 @@ image testguy_blink:
 image testguy_outfit:
     "images/testguy/[testguy_fitchoice]_body.png"
 
-# End Animated images
+# End Custom images
 
 # The layeredimage definition at the bottom
 
