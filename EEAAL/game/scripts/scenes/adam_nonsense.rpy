@@ -87,4 +87,12 @@ label soundtest:
     play soundalt1 "audio/sfx/explosion.mp3"
     play soundalt2 "audio/sfx/blam.mp3"
     tg "That's very noisy."
+    voice "audio/voice/built-then-burnt.mp3"
+    "Let's try adding some voice."
+    voice sustain
+    "Wow he just keeps talking don't he?"
+    voice sustain
+    "This is from a song by A Silver Mt Zion btw."
+    stop voice
+    "Okay enough of that."
     jump daymenu
