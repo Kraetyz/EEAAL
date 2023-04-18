@@ -21,3 +21,7 @@ init:
         
     transform move_to_right:
         linear 1 xalign 0.8
+
+init python:
+    renpy.music.register_channel("soundalt1", "sfx", False)
+    renpy.music.register_channel("soundalt2", "sfx", False)

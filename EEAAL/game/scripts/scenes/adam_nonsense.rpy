@@ -1,6 +1,20 @@
 define n = Character("Narrator")
 define tg = testguy
 
+label adams_test_scenes:
+    menu:
+        "Adam's intro scene.":
+            jump startscene
+            
+        "Test Guy explores the world.":
+            jump testscene
+
+        "Secret ending":
+            jump NSFW
+            
+        "Sound test":
+            jump soundtest
+
 label startscene:
     # Show a background.
     scene lakeshore
@@ -67,3 +81,10 @@ label NSFW:
             jump daymenu
         "An hero":
             return
+            
+label soundtest:
+    play sound "audio/sfx/analog-alarm.wav"
+    play soundalt1 "audio/sfx/explosion.mp3"
+    play soundalt2 "audio/sfx/blam.mp3"
+    tg "That's very noisy."
+    jump daymenu

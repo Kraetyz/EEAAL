@@ -6,12 +6,6 @@ label test_my_scene:
         
         "Back to recurring menu":
             jump daymenu
-
-        "Adam's intro scene.":
-            jump startscene
-            
-        "Test Guy explores the world.":
-            jump testscene
-
-        "Secret ending":
-            jump NSFW
+        
+        "Adam's test scenes":
+            jump adams_test_scenes #These can be found in adam_nonsense.rpy
