@@ -43,6 +43,7 @@ label testscene:
     show testguy
     
     tg "Pee pee poo poo."
+    tg "I can talk more than this."
     
     show testguy frown
     
