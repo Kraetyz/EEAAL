@@ -2,4 +2,4 @@
 # The game starts here.
 
 label start:
-    jump daymenu
+    jump start_scene_pronoun_select
