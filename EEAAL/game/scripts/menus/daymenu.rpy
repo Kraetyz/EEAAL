@@ -1,7 +1,10 @@
 define that_damn_music = True
+image town_name_image = ParameterizedText(xalign=0.5, yalign=0.1, size=+60)
 
 label daymenu:
     scene dfmap with dissolve
+    show town_name_image "[town_name]" at top
+    #show text "[town_name]" at top
     show testguy at right
     jump daymenu_inner
 

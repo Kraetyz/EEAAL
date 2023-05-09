@@ -12,28 +12,67 @@ init python:
             # We create useful string attribute shorthands for the Adam object here, so they can be immediately referenced
             # Maybe we move this into the general pronoun object but especially for customizable protag, these should be immediately accessible
             self.pronoun_shorthand = self.p.Shorthand()
-
-            # Subject
-            self.They = self.p.They()
-            # Object
-            self.Them = self.p.Them()
-            # Possessive
-            self.Their = self.p.Their()
-            # Possessive pronoun
-            self.Theirs = self.p.Theirs()
-            # Reflexive
-            self.Themselves = self.p.Themselves()
-                
-            # Same as above but lower case
-            self.they = self.p.they()
-            self.them = self.p.them()
-            self.their = self.p.their()
-            self.theirs = self.p.theirs()
-            self.themselves = self.p.themselves()
-
-            # Same as above but capital case
-            self.THEY = self.p.THEY()
-            self.THEM = self.p.THEM()
-            self.THEIR = self.p.THEIR()
-            self.THEIRS = self.p.THEIRS()
-            self.THEMSELVES = self.p.THEMSELVES()
+        
+        @property
+        def PronounShorthand(self):
+            return self.p.Shorthand()
+        
+        @property
+        def They(self):
+            return self.p.They()
+        
+        @property
+        def Them(self):
+            return self.p.Them()
+            
+        @property
+        def Their(self):
+            return self.p.Their()
+            
+        @property
+        def Theirs(self):
+            return self.p.Theirs()
+            
+        @property
+        def Themselves(self):
+            return self.p.Themselves()
+            
+        @property
+        def they(self):
+            return self.p.they()
+        
+        @property
+        def them(self):
+            return self.p.them()
+            
+        @property
+        def their(self):
+            return self.p.their()
+            
+        @property
+        def theirs(self):
+            return self.p.theirs()
+            
+        @property
+        def themselves(self):
+            return self.p.themselves()
+            
+        @property
+        def THEY(self):
+            return self.p.THEY()
+        
+        @property
+        def THEM(self):
+            return self.p.THEM()
+            
+        @property
+        def THEIR(self):
+            return self.p.THEIR()
+            
+        @property
+        def THEIRS(self):
+            return self.p.THEIRS()
+            
+        @property
+        def THEMSELVES(self):
+            return self.p.THEMSELVES()

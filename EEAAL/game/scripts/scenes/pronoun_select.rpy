@@ -33,8 +33,21 @@ label start_scene_pronoun_select:
     
     Adam.c "I definitely heard that."
     
-    n "All becomes black. And Adam returns to hell."
+    jump start_scene_town_name_select
     
-    n "[Adam.They] will come with us, for this is [Adam.their] story."
+label start_scene_town_name_select:
+    n "You are moving to another country. Which country isn't important, because the plastic hell of modern life is all-encompassing."
+    Adam.c "What's the name of the town to which I am moving?"
+    n "That is for you to decide."
+    
+    label town_name_input:
+        python:
+            town_name = renpy.input("What is the name of this town?", length=32)
+            town_name = town_name.strip()
+
+    if not town_name:
+        jump town_name_input
+    
+    n "And thus, Adam moved to [town_name]. [Adam.Their] life was about to become a lot more complicated."
     
     jump daymenu
