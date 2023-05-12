@@ -1503,3 +1503,17 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+### KRATZ WORK EVERYTHING ABOVE IS RENPY PREMADE ###
+### CONSIDER NOTHING FINAL UNTIL WE ARE DONE     ###
+
+### Day menu screen with clickable background objects
+# None of this works yet, I am keeping it here to experiment
+
+screen daymenu_bg():
+    tag interactable_background
+    modal False
+    sensitive False
+    vbox xalign 0.5 yalign 0.5:
+          imagebutton idle "stolen_wooden_sign.jpg" action ShowMenu('save')

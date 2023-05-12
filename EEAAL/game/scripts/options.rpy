@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("EEAAL")
+define config.name = _("Everybody Dates Adam")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,13 +23,19 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "0.1" #idfk how we'll do versioning but update this if you feel like it, 1.0 means "finished"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+This game is about Adam, who moves to a new country and dates everyone there.
+
+CREDITS\n
+Adam "Kraetyz" Kratz - Programming\n
+Carmen "Carm" Neske - Project management\n
+Everyone else - Everything else (names will be filled in as we go)
 """)
 
 
@@ -37,7 +43,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "EEAAL"
+define build.name = "EDA"
 
 
 ## Sounds and music ############################################################
