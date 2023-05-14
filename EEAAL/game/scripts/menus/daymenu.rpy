@@ -7,7 +7,7 @@ label daymenu:
     show town_signpost at Position(xpos=0.1, ypos=0.75)
     show town_name_image "{font=fonts/PopulationZeroBB.otf}[town_name]{/font}" at Position(xpos=0.1, ypos=0.61)
     #show text "[town_name]" at top
-    show testguy at right
+    show Adam_Front at right, normal_size
     jump daymenu_inner
 
 label daymenu_inner:
@@ -23,13 +23,15 @@ label daymenu_inner:
             jump test_my_scene
 
         "Go to my room.":
-            tg "Gotta change my fit!"
-            python:
-                if testguy_fitchoice == "white":
-                    testguy_fitchoice = "red"
-                else:
-                    testguy_fitchoice = "white"
-            jump daymenu_inner
+            jump dressing_room
+            # Old
+            #tg "Gotta change my fit!"
+            #python:
+            #    if testguy_fitchoice == "white":
+            #        testguy_fitchoice = "red"
+            #    else:
+            #        testguy_fitchoice = "white"
+            #jump daymenu_inner
 
         "Visit the store.":
             $ testguy_position = move_to_right

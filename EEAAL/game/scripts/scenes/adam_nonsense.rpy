@@ -3,11 +3,10 @@ define tg = testguy
 
 label adams_test_scenes:
     menu:
+        "Defined images in screen":
+            call screen test_scene
         "Adam's intro scene.":
             jump oldstartscene
-            
-        "Testing interactable screens":
-            jump interactable_screen_experiment
             
         "Test Guy explores the world.":
             jump testscene

@@ -6,6 +6,10 @@ init python:
             self.c = character
             self.p = Pronouns()
             
+            self.outfit = "Adam_Outfit_NPC"
+            
+            self.outfits = ["None", "Adam_Outfit_NPC", "Adam_Outfit_Blue", "Adam_Outfit_Red"]
+            
         def SetPronouns(self, new_pronoun):
             self.p = new_pronoun
         

@@ -1503,14 +1503,3 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
-
-
-### KRATZ WORK EVERYTHING ABOVE IS RENPY PREMADE ###
-### CONSIDER NOTHING FINAL UNTIL WE ARE DONE     ###
-
-### Day menu screen with custom clickable background objects
-screen interacting_with_background():
-    tag interactable_background
-    layer "scene_bg"
-    vbox xalign 0.5 yalign 0.5:
-        imagebutton idle "stolen_wooden_sign.jpg" action ShowMenu('save')
