@@ -18,28 +18,24 @@ screen test_scene():
 screen dressing_room():
     hbox:
         pos(50, 50)
-        xysize(48,48)
         imagebutton idle "images/adam/Adam_Body.png" action Call("switch_adams_outfit", "None"):
             at transform:
                 zoom 0.1
     
     hbox:
-        pos(180, 50)
-        xysize(48,48)
+        pos(200, 50)
         imagebutton idle "images/adam/Adam_Outfit_NPC.png" action Call("switch_adams_outfit", "Adam_Outfit_NPC"):
             at transform:
                 zoom 0.1
         
     hbox:
-        pos(310, 50)
-        xysize(48,48)
+        pos(350, 50)
         imagebutton idle "images/adam/Adam_Outfit_Red.png" action Call("switch_adams_outfit", "Adam_Outfit_Red"):
             at transform:
                 zoom 0.1
         
     hbox:
-        pos(440, 50)
-        xysize(48,48)
+        pos(500, 50)
         imagebutton idle "images/adam/Adam_Outfit_Blue.png" action Call("switch_adams_outfit", "Adam_Outfit_Blue"):
             at transform:
                 zoom 0.1
