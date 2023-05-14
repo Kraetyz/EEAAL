@@ -1,6 +1,7 @@
 define n = Character("Narrator")
 
 label start_scene_pronoun_select:
+
     n "Your name is Adam."
     Adam.c "My name is Adam."
     n "What are your pronouns?"
@@ -23,8 +24,8 @@ label start_scene_pronoun_select:
         "Xe/Xem":
             $Adam.SetPronouns(pronoun_list["Xe"])
             
-    Adam.c "My pronouns are [Adam.pronoun_shorthand]."
-    
+    Adam.c "My pronouns are [Adam.PronounShorthand]."
+        
     n "When anyone refers to Adam, they will say: [Adam.They] grabbed [Adam.their] book."
 
     n "The book was gifted to [Adam.them]. It was [Adam.theirs] to keep."

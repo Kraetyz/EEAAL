@@ -1,10 +1,10 @@
 init python:
     # A list of pronouns
     theythem = Pronouns()
-    hehim = Pronouns("He/Him", "He", "Him", "His", "His", "Himself")
-    sheher = Pronouns("She/Her", "She", "Her", "Her", "Hers", "Herself")
-    zehir = Pronouns("Ze/Hir", "Ze", "Hir", "Hir", "Hirs", "Hirzelf")
-    xexem = Pronouns("Xe/Xem", "Xe", "Xem", "Xir", "Xirs", "Xirself")
+    hehim = Pronouns("He/Him", "He", "Him", "His", "His", "Himself", "'s", "'s")
+    sheher = Pronouns("She/Her", "She", "Her", "Her", "Hers", "Herself", "'s", "'s")
+    zehir = Pronouns("Ze/Hir", "Ze", "Hir", "Hir", "Hirs", "Hirzelf", "'s", "'s")
+    xexem = Pronouns("Xe/Xem", "Xe", "Xem", "Xir", "Xirs", "Xirself", "'s", "'s")
     
     pronoun_list = { 
         "They": theythem,

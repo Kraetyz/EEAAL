@@ -4,7 +4,10 @@ define tg = testguy
 label adams_test_scenes:
     menu:
         "Adam's intro scene.":
-            jump startscene
+            jump oldstartscene
+            
+        "Testing interactable screens":
+            jump interactable_screen_experiment
             
         "Test Guy explores the world.":
             jump testscene
@@ -15,7 +18,15 @@ label adams_test_scenes:
         "Sound test":
             jump soundtest
 
-label startscene:
+label interactable_screen_experiment:
+    show screen interacting_with_background 
+    "You can click that sign."
+    "It will take you to the save menu."
+    "You can also just not and finish the scene."
+    hide screen interacting_with_background
+    jump daymenu
+
+label oldstartscene:
     # Show a background.
     scene lakeshore
 
