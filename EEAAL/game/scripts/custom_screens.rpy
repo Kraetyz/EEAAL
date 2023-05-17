@@ -12,34 +12,25 @@ screen test_scene():
     imagebutton idle 'test_image' action ShowMenu('save')
 
 
-# This needs to be expanded so that the clothes are filled into the screen via a loop
-# And maybe use defined iamges instead of slapping transforms on there (see above)
+# Maybe use defined iamges instead of slapping transforms on there (see above)
 # Or don't. See what feels best.
-screen dressing_room():
-    hbox:
-        pos(50, 50)
-        imagebutton idle "images/adam/Adam_Body.png" action Call("switch_adams_outfit", "None"):
-            at transform:
-                zoom 0.1
-    
-    hbox:
-        pos(200, 50)
-        imagebutton idle "images/adam/Adam_Outfit_NPC.png" action Call("switch_adams_outfit", "Adam_Outfit_NPC"):
-            at transform:
-                zoom 0.1
-        
-    hbox:
-        pos(350, 50)
-        imagebutton idle "images/adam/Adam_Outfit_Red.png" action Call("switch_adams_outfit", "Adam_Outfit_Red"):
-            at transform:
-                zoom 0.1
-        
-    hbox:
-        pos(500, 50)
-        imagebutton idle "images/adam/Adam_Outfit_Blue.png" action Call("switch_adams_outfit", "Adam_Outfit_Blue"):
-            at transform:
-                zoom 0.1
-    
+screen dressing_room(outfits):
+
+    # outfits needs to contain only names that exist as images in the adam folder
+    # Or "None", which is a special case for getting nakey. For now - should maybe be removed eventually.
+    for i, outfit in enumerate(outfits):
+        hbox:
+            pos(50 + 150*i, 50)
+            if outfit == "None":
+                imagebutton idle "images/adam/Adam_Body.png" action Call("switch_adams_outfit", "None"):
+                    at transform:
+                        zoom 0.1
+            else:
+                #These imagebuttons will eventually be using the "auto" setting, idle is just until we have any kind of assets
+                imagebutton idle "images/adam/" + outfit + ".png" action Call("switch_adams_outfit", outfit):
+                    at transform:
+                        zoom 0.1
+
     vbox:
         yalign 0.9
         xalign 0.3

@@ -5,5 +5,5 @@ label switch_adams_outfit(newfit="None"):
 
 label dressing_room:
     show Adam_Front at right
-    call screen dressing_room
+    call screen dressing_room(Adam.outfits)
     call daymenu
