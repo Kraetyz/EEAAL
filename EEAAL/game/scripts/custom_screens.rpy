@@ -22,12 +22,12 @@ screen dressing_room(outfits):
         hbox:
             pos(50 + 150*i, 50)
             if outfit == "None":
-                imagebutton idle "images/adam/Adam_Body.png" action Call("switch_adams_outfit", "None"):
+                imagebutton idle "images/adam/Adam_Body.png" action Call("switch_adams_outfit", newfit=outfit, ret=False):
                     at transform:
                         zoom 0.1
             else:
                 #These imagebuttons will eventually be using the "auto" setting, idle is just until we have any kind of assets
-                imagebutton idle "images/adam/" + outfit + ".png" action Call("switch_adams_outfit", outfit):
+                imagebutton idle "images/adam/" + outfit + ".png" action Call("switch_adams_outfit", newfit=outfit, ret=False):
                     at transform:
                         zoom 0.1
 

@@ -21,6 +21,9 @@ label daymenu_inner:
         "Test scene list":
             stop music
             jump test_my_scene
+            
+        "Better day loop.":
+            jump dayloop
 
         "Go to my room.":
             jump dressing_room
