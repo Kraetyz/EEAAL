@@ -8,14 +8,28 @@ label adams_test_scenes:
         "Adam's intro scene.":
             jump oldstartscene
             
-        "Test Guy explores the world.":
-            jump testscene
+        "Scene selection with SceneInfo.":
+            jump sceneinfo_test
 
         "Secret ending":
             jump NSFW
             
         "Sound test":
             jump soundtest
+            
+label sceneinfo_test:
+    python:
+        oldstart = SceneInfo("Old Start Scene", "oldstartscene", 1, ["Grasshopper Adam"])
+        testscene = SceneInfo("Dumb Test", "testscene", 2, ["Test Guy", "Grasshopper Adam"])
+    
+    menu:
+        "Pick one of the scenes."
+        
+        "[oldstart.Name] featuring [oldstart.CharacterList]":
+            $oldstart.StartScene()
+            
+        "[testscene.Name] featuring [testscene.CharacterList]":
+            $testscene.StartScene()
 
 label interactable_screen_experiment:
     show screen interacting_with_background 
