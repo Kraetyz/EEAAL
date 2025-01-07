@@ -12,7 +12,7 @@ label daymenu:
 
 label daymenu_inner:
     if that_damn_music:
-        play music "audio/music/funky-piano.wav" if_changed
+        play music "audio/music/Whimsical Creature.mp3" if_changed volume 0.2
     else:
         stop music
     menu:
