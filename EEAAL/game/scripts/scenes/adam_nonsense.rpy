@@ -8,15 +8,34 @@ label adams_test_scenes:
         "Adam's intro scene.":
             jump oldstartscene
             
-        "Scene selection with SceneInfo.":
+        "Scene selection with SceneInfo":
             jump sceneinfo_test
+        
+        "Event History testing":
+            jump eventhistory_test
 
         "Secret ending":
             jump NSFW
             
         "Sound test":
             jump soundtest
+        
+        "Back":
+            jump daymenu
             
+label eventhistory_test:
+    python:
+        event_test = globalEvents.GetEventData("FirstEvent", "Penis")
+        thirdimpactfolks = globalEvents.GetEventParticipants("ThirdImpact")
+        was_adam_at_third_impact = globalEvents.EventHasParticipant("ThirdImpact", "Adam")
+
+    if event_test == "Large":
+        "Wow, that's huge!"
+
+    "[thirdimpactfolks] had a bad day. Was Adam there? [was_adam_at_third_impact]"
+    
+    jump adams_test_scenes
+   
 label sceneinfo_test:
     python:
         oldstart = SceneInfo("Old Start Scene", "oldstartscene", 1, ["Grasshopper Adam"])

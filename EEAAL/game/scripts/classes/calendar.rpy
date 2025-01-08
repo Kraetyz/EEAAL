@@ -2,7 +2,7 @@ init python:
     class Calendar:
     
         def __init__(self):
-            #I am lazy so this is just an integer. 0 = Morning, 1 = Day, 2 = Afternoon, 3 = Evening
+            #I am lazy so this is just an integer. 0 = Morning, 1 = Afternoon, 2 = Night
             #Every pass through the day loop increases timeofday by one, then resets after 3 and updates the day.
             self.timeofday = 0
             
@@ -20,18 +20,16 @@ init python:
             if (self.timeofday == 0):
                 return "Morning"
             if (self.timeofday == 1):
-                return "Lunch"
-            if (self.timeofday == 2):
                 return "Afternoon"
-            if (self.timeofday == 3):
-                return "Evening"
+            if (self.timeofday == 2):
+                return "Night"
             return "What the fuck?"
         
         def GetDate(self):
             return self.date
             
         def NextTimeOfDay(self):
-            self.timeofday = (self.timeofday + 1) % 4
+            self.timeofday = (self.timeofday + 1) % 3
             if (self.timeofday == 0):
                 self.NextDay()
         

@@ -25,3 +25,13 @@ init python:
     
     #Facts about the world
     town_name = ""
+
+
+
+
+
+    #Event history testing
+    globalEvents = EventHistory()
+    
+    globalEvents.AddEvent("FirstEvent", ["Adam", "Narrator"], [("Avocado", True), ("Penis", "Large"), ("Apples", 6)])
+    globalEvents.AddEvent("ThirdImpact", ["Shinji", "Rei", "Asuka"], [("Humans", "They're all dead!", ("Shinji's dad", "Still a piece of shit"))])
