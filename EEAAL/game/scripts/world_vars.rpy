@@ -19,12 +19,13 @@ init python:
     # So when we figure out how the EDACharacter class should look, and we create character scripts for each of them
     # This line below will probably belong in one of those scripts
     Adam = Adam(Character("Adam", color="#F5DA56", what_color="#7D5F7A"))
+    Adam.SetPronouns(pronoun_list["They"])
     
     #Calendar!!
     Calendar = Calendar()
     
     #Facts about the world
-    town_name = ""
+    town_name = "TOWN NAME"
 
 
 

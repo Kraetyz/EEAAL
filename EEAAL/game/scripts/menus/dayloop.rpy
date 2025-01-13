@@ -2,12 +2,17 @@
 # It lets the player decide what to do during their day.
 # Every scene chain should eventually lead back to this.
 
+image town_name_image = ParameterizedText(xalign=0.5, yalign=0.1, size=+50)
+image town_signpost = "images/signtest.png"
 
 #TEST LOL
 init python:
     Plants = 0
 
 label dayloop:
+    scene dfmap with dissolve
+    show town_signpost at Position(xpos=0.1, ypos=0.75)
+    show town_name_image "{font=fonts/PopulationZeroBB.otf}[town_name]{/font}" at Position(xpos=0.1, ypos=0.61)
     # Conditional logic goes here to display the correct time of day background
     
     $ TimeOfDay = Calendar.GetTimeOfDay()
@@ -19,9 +24,13 @@ label dayloop:
     "It is [TimeOfDayStr] of day [Date] and Adam wants to waste [Adam.their] time."
     
 label .dayloop_menu:
+    play music "audio/music/Whimsical Creature.mp3" if_changed volume 0.2
     
     menu:
         "What should [Adam.they] do?"
+
+        "Dev options":
+            jump .dayloop_debug
 
         "Change outfit.":
             call dressing_room
@@ -54,3 +63,17 @@ label .dayloop_done:
     $ Calendar.NextTimeOfDay()
     "We return to the beginning."
     jump dayloop
+    
+label .dayloop_debug:
+    menu:
+        "What are you doing?"
+
+        "Test scene list":
+            stop music
+            jump test_my_scene
+
+        "Pronoun select and town name":
+            jump start_scene_pronoun_select
+        
+        "Back":
+            jump .dayloop_menu

@@ -1,6 +1,4 @@
 define that_damn_music = True
-image town_name_image = ParameterizedText(xalign=0.5, yalign=0.1, size=+50)
-image town_signpost = "images/signtest.png"
 
 label daymenu:
     scene dfmap with dissolve
@@ -17,24 +15,6 @@ label daymenu_inner:
         stop music
     menu:
         "A recurring menu."
-
-        "Test scene list":
-            stop music
-            jump test_my_scene
-            
-        "Better day loop.":
-            jump dayloop
-
-        "Go to my room.":
-            jump dressing_room
-            # Old
-            #tg "Gotta change my fit!"
-            #python:
-            #    if testguy_fitchoice == "white":
-            #        testguy_fitchoice = "red"
-            #    else:
-            #        testguy_fitchoice = "white"
-            #jump daymenu_inner
 
         "Visit the store.":
             $ testguy_position = move_to_right

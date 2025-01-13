@@ -51,4 +51,4 @@ label start_scene_town_name_select:
     
     n "And thus, Adam moved to [town_name]. [Adam.Their] life was about to become a lot more complicated."
     
-    jump daymenu
+    jump dayloop

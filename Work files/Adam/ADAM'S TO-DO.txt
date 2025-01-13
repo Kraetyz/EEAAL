@@ -16,6 +16,7 @@ https://docs.google.com/document/d/1tvNtewdfvj5Rpntf16bQkzuN4IBnumw9KD8QpwfcIfA/
 Shop
 - Intro scene
 - Once presented with a seed, shopkeeper sells it
+- Unlockable seeds
 
 Remove old dayloop
 
