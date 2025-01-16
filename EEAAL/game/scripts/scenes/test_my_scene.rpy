@@ -4,6 +4,9 @@ label test_my_scene:
         
         "Back to day loop":
             jump dayloop
+            
+        "Personality test":
+            jump personality_test
         
         "Adam's test scenes":
             jump adams_test_scenes #These can be found in adam_nonsense.rpy

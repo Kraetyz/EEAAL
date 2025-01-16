@@ -6,10 +6,26 @@ init python:
             self.c = character
             self.p = Pronouns()
             
+            # This is a test version of what will hopefully be a more refined system in the future
+            # 0 = Assertive, 1 = Confident, 2 = Pensive
+            self.personality = 0
+            
             self.outfit = "Adam_Outfit_NPC"
             
             self.outfits = ["None", "Adam_Outfit_NPC", "Adam_Outfit_Blue", "Adam_Outfit_Red"]
-            
+        
+        # These are the methods we will be using to handle the test version of our personality system
+        def SetPersonality(self, new_personality):
+            if new_personality > -1 and new_personality < 3:
+                self.personality = new_personality
+        def AssertivePersonality(self):
+            return self.personality == 0
+        def ConfidentPersonality(self):
+            return self.personality == 1  
+        def PensivePersonality(self):
+            return self.personality == 2
+        
+        
         def SetPronouns(self, new_pronoun):
             self.p = new_pronoun
         

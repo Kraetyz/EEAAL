@@ -1,0 +1,63 @@
+label personality_test:
+    $winner = False
+
+    "Hi"
+    menu:
+        "How are you feeling today?"
+        
+        "Assertive":
+            $Adam.SetPersonality(0)
+        "Confident":
+            $Adam.SetPersonality(1)
+        "Pensive":
+            $Adam.SetPersonality(2)
+     
+    "Let's talk about the Israel-Gaza conflict!"
+
+    if Adam.AssertivePersonality():
+        Adam.c "From the river to the sea! Palestine will be free!"
+    else:
+        Adam.c "There's probably something better we can do with our time."
+
+    menu:
+        "What if we played some sports?"
+        
+        "I guess we can.":
+            if Adam.PensivePersonality():
+                jump loser
+            else:
+                jump winner
+        
+        "I'd rather not.":
+            jump finished
+        
+        "Anything but golf!" if Adam.ConfidentPersonality():
+            "What about basketball?"
+            Adam.c "Let's B some Balls, brother!"
+            jump winner
+            
+     
+     
+    label winner:
+        Adam.c "Wow, ez game."
+        $winner = True
+        jump finished
+    label loser:
+        Adam.c "I've never been more humiliated."
+        "Don't commit sudoku, please. Even if you are a loser."
+        Adam.c "No promises."
+     
+    label finished:
+        "Wow, we had a lot of fun, didn't we?"
+        
+        if Adam.AssertivePersonality():
+            Adam.c "Fuckin, no?"
+        elif Adam.ConfidentPersonality():
+            if winner:
+                Adam.c "Yeah, because I won."
+            else:
+                Adam.c "I always have fun!"
+        elif Adam.PensivePersonality():
+            Adam.c "Uhm, I guess."
+        "And, scene."
+    jump dayloop
