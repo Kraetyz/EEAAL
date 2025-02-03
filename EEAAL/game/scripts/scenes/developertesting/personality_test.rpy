@@ -18,7 +18,7 @@ label personality_test:
      
     "Let's talk about the Israel-Gaza conflict!"
 
-    if Adam.AssertivePersonality():
+    if Adam.AdventurousPersonality():
         Adam.c "From the river to the sea! Palestine will be free!"
     else:
         Adam.c "There's probably something better we can do with our time."
@@ -27,7 +27,7 @@ label personality_test:
         "What if we played some sports?"
         
         "I guess we can.":
-            if Adam.PensivePersonality():
+            if Adam.BashfulPersonality():
                 jump loser
             else:
                 jump winner
@@ -54,7 +54,7 @@ label personality_test:
     label finished:
         "Wow, we had a lot of fun, didn't we?"
         
-        if Adam.AssertivePersonality():
+        if Adam.AdventurousPersonality():
             Adam.c "Fuckin, no?"
         elif Adam.ConfidentPersonality():
             if winner:
