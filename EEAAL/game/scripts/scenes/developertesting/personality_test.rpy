@@ -1,16 +1,20 @@
 label personality_test:
+    image grasshopper = "adam_grasshopper.jpg"
+    show Adam_Front at left, normal_size
+    show grasshopper at right
+    
     $winner = False
 
     "Hi"
     menu:
         "How are you feeling today?"
         
-        "Assertive":
+        "Adventurous":
             $Adam.SetPersonality(0)
+        "Bashful":
+            $Adam.SetPersonality(2)
         "Confident":
             $Adam.SetPersonality(1)
-        "Pensive":
-            $Adam.SetPersonality(2)
      
     "Let's talk about the Israel-Gaza conflict!"
 
