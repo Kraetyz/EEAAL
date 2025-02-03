@@ -18,12 +18,12 @@ init python:
         def SetPersonality(self, new_personality):
             if new_personality > -1 and new_personality < 3:
                 self.personality = new_personality
-        def AssertivePersonality(self):
+        def AdventurousPersonality(self):
             return self.personality == 0
+        def BashfulPersonality(self):
+            return self.personality == 2
         def ConfidentPersonality(self):
             return self.personality == 1  
-        def PensivePersonality(self):
-            return self.personality == 2
         
         
         def SetPronouns(self, new_pronoun):
