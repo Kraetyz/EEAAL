@@ -61,7 +61,7 @@ label personality_test:
                 Adam.c "Yeah, because I won."
             else:
                 Adam.c "I always have fun!"
-        elif Adam.PensivePersonality():
+        elif Adam.BashfulPersonality():
             Adam.c "Uhm, I guess."
         "And, scene."
     jump dayloop
