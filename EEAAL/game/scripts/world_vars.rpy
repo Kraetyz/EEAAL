@@ -30,7 +30,8 @@ init python:
     #Librarian Social Points
     librarian_points = 0
 
-
+    #Paypal Points
+    pen_points = 0
 
 
 

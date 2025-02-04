@@ -3,3 +3,6 @@ image lakeshore:
 
 image dfmap:
     "images/backgrounds/DFmap.png"
+
+image windowbox:
+    "images/windowblank.png"

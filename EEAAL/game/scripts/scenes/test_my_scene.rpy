@@ -13,3 +13,6 @@ label test_my_scene:
             
         "Librarian Scene 1":
             jump librarian_1
+        
+        "Pen Pal scene 1A":
+            jump PenPal1
