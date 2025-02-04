@@ -1,6 +1,5 @@
 label personality_test:
     image grasshopper = "adam_grasshopper.jpg"
-    test = Character("fuck you")
     show Adam_Front at left, normal_size
     show grasshopper at right
     
