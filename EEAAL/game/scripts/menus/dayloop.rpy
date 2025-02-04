@@ -45,24 +45,18 @@ label .dayloop_menu:
             if Plants > 4:
                 "Get naked."
                 call switch_adams_outfit(ret=True)
-            jump .dayloop_done
+            jump dayloop_done
         
         "Go somewhere new!":
             "This is where we'll put a map, maybe. Let the player explore the world, meet people, idk."
             "Once the player is done with a set of scenes, they will write jump dayloop.dayloop_done and come back here."
-            jump .dayloop_done
+            jump dayloop_done
         
         "Call a friend!":
             "If you get someone's phone number, maybe you can text them?"
             "Send them funny memes, tasteless nudes, complain. Who knows, maybe they're into that shit?"
             "Or maybe they will come meet up with you, protag-kun."
-            jump .dayloop_done
-        
-label .dayloop_done:
-    "The [TimeOfDayStr] is over."
-    $ Calendar.NextTimeOfDay()
-    "We return to the beginning."
-    jump dayloop
+            jump dayloop_done
     
 label .dayloop_debug:
     menu:
@@ -77,3 +71,9 @@ label .dayloop_debug:
         
         "Back":
             jump .dayloop_menu
+        
+label dayloop_done:
+    "The [TimeOfDayStr] is over."
+    $ Calendar.NextTimeOfDay()
+    "We return to the beginning."
+    jump dayloop
