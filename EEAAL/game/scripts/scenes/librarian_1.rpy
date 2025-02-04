@@ -3,6 +3,7 @@ label librarian_1:
     show Adam_Front at left, normal_size
     
     the_librarian "I haven’t seen you around before, what brings you to this small, deserted part of the world? The name’s Grace if you’re wonderin’."
+    $the_librarian = Character("Grace")
     
     menu:
         "I just moved to town and I’m looking for new adventures!":
