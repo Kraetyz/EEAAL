@@ -1,5 +1,6 @@
 label personality_test:
     image grasshopper = "adam_grasshopper.jpg"
+    test = Character("fuck you")
     show Adam_Front at left, normal_size
     show grasshopper at right
     
@@ -64,4 +65,4 @@ label personality_test:
         elif Adam.BashfulPersonality():
             Adam.c "Uhm, I guess."
         "And, scene."
-    jump dayloop
+    jump dayloop_done
