@@ -1,0 +1,49 @@
+label librarian_1:
+    define the_librarian = Character("The Librarian")
+    show Adam_Front at left, normal_size
+    
+    the_librarian "I haven’t seen you around before, what brings you to this small, deserted part of the world? The name’s Grace if you’re wonderin’."
+    
+    menu:
+        "I just moved to town and I’m looking for new adventures!":
+            jump option_1
+        "I’m hoping that with the help of my green thumb I can bring some colour to this town. My name is Adam, by the way.":
+            jump option_2
+    
+    label option_1:
+        the_librarian "Do you realize you’ve just stepped into a world that is far more complicated than they want you to believe? You’ll find adventures here all right, for better or worse. Just you wait…"
+        
+        menu:
+            "Oh, okay. It was nice meeting you Grace. I’m Adam.":
+                $librarian_points = librarian_points +1
+            "You’re kind of weird.":
+                $librarian_points = librarian_points -1
+            "Say nothing and leave.":
+                the_librarian "Oh, okay then."
+            "Sounds like a great opportunity then! My name’s Adam, by the way, and it was nice to meet you." if Adam.AdventurousPersonality():
+                $librarian_points = librarian_points -2
+            "Oh no, uh, that sounds a bit ominous. My name’s Adam. Please let me know if anything bad is going to happen…" if Adam.BashfulPersonality():
+                $librarian_points = librarian_points +2
+            "Don’t you worry Grace, I can handle anything life throws at me. My name’s Adam, by the way, though one day I won’t even need to introduce myself." if Adam.ConfidentPersonality():
+                $librarian_points = librarian_points
+                
+        jump dayloop_done
+        
+    label option_2:
+        the_librarian "Hah! Colour. Don’t you know that the government spreading those toxic chemtrails from their flying machines is the whole reason nothing will grow here anymore!?"
+        
+        menu:
+            "I’m not sure that is true, but either way I’m going to try!":
+                $librarian_points = librarian_points +1
+            "Are you crazy? You know chemtrails aren’t real right?":
+                $librarian_points = librarian_points -1
+            "Say nothing and leave.":
+                the_librarian "Oh, okay then."
+            "So you’re saying I have a challenge to overcome! I’ll get down to the bottom of it and try my hardest." if Adam.AdventurousPersonality():
+                $librarian_points = librarian_points -2
+            "Do you really think that’s why nothing grows here? I’m not sure about that but maybe I can still try." if Adam.BashfulPersonality():
+                $librarian_points = librarian_points +2
+            "That won’t stop me from making this place beautiful, I’m going to prove you wrong, you’ll see!" if Adam.ConfidentPersonality():
+                $librarian_points = librarian_points
+                
+        jump dayloop_done

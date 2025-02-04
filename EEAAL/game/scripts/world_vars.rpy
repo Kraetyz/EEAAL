@@ -26,6 +26,9 @@ init python:
     
     #Facts about the world
     town_name = "TOWN NAME"
+    
+    #Librarian Social Points
+    librarian_points = 0
 
 
 

@@ -10,3 +10,6 @@ label test_my_scene:
         
         "Adam's test scenes":
             jump adams_test_scenes #These can be found in adam_nonsense.rpy
+            
+        "Librarian Scene 1":
+            jump librarian_1
