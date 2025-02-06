@@ -32,6 +32,9 @@ init python:
 
     #Paypal Points
     pen_points = 0
+    
+    #Social Points 
+    soc = 0
 
 
 
