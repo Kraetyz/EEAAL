@@ -52,12 +52,16 @@ label PenPal1:
             "Dismiss":
                 $pen_points = pen_points-1
                 $soc = soc-1
+                jump room_d1
             "I don’t know yet, but it’ll be fun to explore the local ecology!" if Adam.AdventurousPersonality():
                 $pen_points = pen_points 
             "I still want to try. This will be my first test of character."  if Adam.BashfulPersonality():
                 $pen_points = pen_points-2
+                Pen "Okay deep lol" 
             "I’m gonna make the environment my bitch >:)" if Adam.ConfidentPersonality():
                 $pen_points = pen_points+2
+                Pen "I am NOT convinced it works like that lol"
+                Adam.c "Just you watch me."
             
         
         Pen "Nothing ever gets you down!! You gotta show me your progress reportsss"
@@ -76,14 +80,45 @@ label PenPal1:
         jump room_d1
         
         label PenPal1C: #tired I'm done this for now 
-            "Woah. Carm didn't put anything in here yet."
+        
+            Pen "My folks made YOUR FAVOURITE for dinner AND YOU CAN’T SHARE ANY. Who wishes [Adam.their] was back home now??"
+            Pen "But seriously how was day 1?"
+            
+            menu:
+                "Dismiss":
+                    $pen_points = pen_points-1
+                    $soc = soc-1
+                    jump room_d1
+                "Eventful, but I think it was good. I got to meet some of the locals.":
+                    $pen_points = pen_points+1
+                    Pen "Trying to fit in already, huh? That’s just like you"
+                    Pen "It would’ve taken me months tbh"
+                    Adam.c "It’s not that hard if you give people a chance."
+                "The people here are a little strange, that's for sure.":
+                    Pen "Or are YOU strange? You’re not from there and showed up suddenly"
+                    Adam.c "I guess I didn't think of it like that."
+                "It could have gone better. Definitely missing home.":
+                    $pen_points = pen_points-1 
+                    Pen "I’m not the person to ask bc I will just say to come back lol"
+                    Pen "Is that how you're really feeling though?"
+                    Adam.c "Not sure. It’s probably too early to be sure."
+                "It has such a rich and unique culture and I'm looking forward to seeing more!" if Adam.AdventurousPersonality():
+                    $pen_points = pen_points 
+                "It certainly made me think about the decisions that I've made to get here."  if Adam.BashfulPersonality():
+                    $pen_points = pen_points-2
+                "I've asserted my dominance just like I promised! Soon everyone in town will be eating out of my hand." if Adam.ConfidentPersonality():
+                    $pen_points = pen_points+2
+
+            Adam.c "I guess we’ll see what happens from here. It’ll take some getting used to."
+            Pen "Don’t sweat it!! If things don’t gel you can always come back home."
+            Adam.c "Thanks, man."
             jump room_d1 
         
         label room_d1: #Since the ONLY time you can contact Pen Pal is from your room, and by default you RETURN to your room, dismissing them means you just go back to general menu.
             $timestr = Calendar.GetTimeOfDayStr()
             $daystr = Calendar.GetDate() 
 
-            "You are in your room. It sure is a room."
+            "You are in your room. You contemplate for a while. Currently, your social score is [soc]. Your relationship with Pen is [pen_points]."
             "It is currently Day [daystr] and the time is [timestr]." 
             
             menu:

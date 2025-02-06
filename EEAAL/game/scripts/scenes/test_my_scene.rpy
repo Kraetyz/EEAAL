@@ -1,5 +1,6 @@
 label test_my_scene:
     $ TimeOfDay = Calendar.GetTimeOfDay()
+    $ Date = Calendar.GetDate()
     menu:
         "Place a label to your scene here!"
         
@@ -15,12 +16,21 @@ label test_my_scene:
         "Librarian Scene 1":
             jump librarian_1
         
-        "Pen Pal scene Day 1":
-            if TimeOfDay == 0:
-                jump PenPal1
-            if TimeOfDay == 1:
-                jump PenPal1B
-            if TimeOfDay == 2:
-                jump PenPal1C
+        "Pen Pal scenes":
+
+            if Date == 0:
+                if TimeOfDay == 0:
+                    jump PenPal1
+                if TimeOfDay == 1:
+                    jump PenPal1B
+                if TimeOfDay == 2:
+                    jump PenPal1C
+            if Date == 1:
+                if TimeOfDay == 0:
+                    jump PenPal2
+                if TimeOfDay ==1:
+                    jump PenPal2B
+                if TimeOfDay == 2:
+                    jump room_d2
             else:
                 "Oh something is wrong."
