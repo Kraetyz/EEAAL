@@ -1,13 +1,3 @@
-# Create a well defined name and object for the character
-#charname is the code name used for dialogue
-define Xoos = Character("Xoos", color="#46afbc", what_color="#3f156b")
-
-# Character specific variables go here
-
-#define python_variable = None
-
-# End Character specific vars
-
 # Custom images
 #I am including here the example code for making a character's eyes blink
 image xoos_blink:
@@ -21,11 +11,6 @@ image xoos_blink:
     "images/characters/xoos/xoos_l7_eyelids_closed.png"
     pause 0.1
     repeat
-
-#This is an example of how to define a customizable body part
-#Must also define a charname_fitchoice variable near the top of the document to hold the body part name
-#image testguy_outfit:
-#    "images/testguy/[charname_fitchoice]_body.png"
 
 # End Custom images
 

@@ -14,29 +14,20 @@ init python:
         "Xe": xexem
     }
     
-    #Character creation
-    # This should probably, eventually, live somewhere else, but I don't have graphics or whatever yet
-    # So when we figure out how the EDACharacter class should look, and we create character scripts for each of them
-    # This line below will probably belong in one of those scripts
-    Adam = Adam(Character("Adam", color="#F5DA56", what_color="#7D5F7A"))
-    Adam.SetPronouns(pronoun_list["They"])
-    
     #Calendar!!
     Calendar = Calendar()
     
     #Facts about the world
     town_name = "TOWN NAME"
-    
-    #Librarian Social Points
-    librarian_points = 0
-
-    #Paypal Points
-    pen_points = 0
-    
-    #Social Points 
-    soc = 0
 
 
+
+    # Create Characters
+    # Each character is created here by calling their associated creation method, which is defined in their EDAC_CharacterName script
+    TestGuy = CreateTestGuy()
+    Adam = CreateAdam()
+    Librarian = CreateLibrarian()
+    Pen = CreatePenpal()
 
     #Event history testing
     globalEvents = EventHistory()

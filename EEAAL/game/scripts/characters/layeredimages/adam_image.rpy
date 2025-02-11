@@ -21,7 +21,7 @@ image adam_blink:
     repeat
     
 image adam_outfit:
-    "images/adam/[Adam.outfit].png"
+    "images/adam/[Adam.Get('outfit')].png"
 
 # End Custom images
 

@@ -1,5 +1,4 @@
 define n = Character("Narrator")
-define tg = testguy
 
 label adams_test_scenes:
     menu:
@@ -21,7 +20,7 @@ label adams_test_scenes:
             jump soundtest
         
         "Back":
-            jump daymenu
+            jump dayloop_done
             
 label eventhistory_test:
     python:
@@ -85,12 +84,12 @@ label testscene:
     $testguy_position = center
     show testguy
     
-    tg "Pee pee poo poo."
-    tg "I can talk more than this."
+    TestGuy.c "Pee pee poo poo."
+    TestGuy.c "I can talk more than this."
     
     show testguy frown
     
-    tg "My penis is only [testguy_inches] inches long."
+    TestGuy.c "My penis is only [TestGuy.Get('testguy_inches')] inches long."
     
     show testguy at move_to_right
 
@@ -100,29 +99,29 @@ label testscene:
     
     show testguy smile
     
-    $ testguy_inches = testguy_inches * 2
+    $ TestGuy.Set("testguy_inches", TestGuy.Get("testguy_inches") * 2)
     
-    tg "Wow! It grew to [testguy_inches] inches when I saw Adam as a grasshopper!"
+    TestGuy.c "Wow! It grew to [TestGuy.Get('testguy_inches')] inches when I saw Adam as a grasshopper!"
 
     # This ends the game.
     
-    jump daymenu
+    jump dayloop_done
     
 label NSFW:
     show testguy at center
-    tg "Penis size is important for men! That's why I'm happy that mine is a whole [testguy_inches] inches long!"
-    tg "When pee pee hard, this happens!"
+    TestGuy.c "Penis size is important for men! That's why I'm happy that mine is a whole [TestGuy.Get('testguy_inches')] inches long!"
+    TestGuy.c "When pee pee hard, this happens!"
     show testguy eyes_ahegao mouth_ahegao
-    tg "Hoooo weeee THIS IS FUN!"
-    $testguy_inches = int(testguy_inches / 3)
+    TestGuy.c "Hoooo weeee THIS IS FUN!"
+    $ TestGuy.Set("testguy_inches", TestGuy.Get("testguy_inches") / 3)
     show testguy smile eyes_open
-    tg "After draining my balls, my penis has shrunk to a modest [testguy_inches] inches. That's okay, I still feel great."
+    TestGuy.c "After draining my balls, my penis has shrunk to a modest [TestGuy.Get('testguy_inches')] inches. That's okay, I still feel great."
     
     menu:
         "Should I keep up this grotesque mockery of life?"
         
         "Fuck it we ball":
-            jump daymenu
+            jump dayloop_done
         "An hero":
             return
             
@@ -130,7 +129,7 @@ label soundtest:
     play sound "audio/sfx/analog-alarm.wav"
     play soundalt1 "audio/sfx/explosion.mp3"
     play soundalt2 "audio/sfx/blam.mp3"
-    tg "That's very noisy."
+    TestGuy.c "That's very noisy."
     voice "audio/voice/built-then-burnt.mp3"
     "Let's try adding some voice."
     voice sustain
@@ -139,4 +138,4 @@ label soundtest:
     "This is from a song by A Silver Mt Zion btw."
     stop voice
     "Okay enough of that."
-    jump daymenu
+    jump dayloop_done

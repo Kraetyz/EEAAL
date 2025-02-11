@@ -1,4 +1,4 @@
-# Maybe use defined iamges instead of slapping transforms on there (see above)
+# Maybe use defined images instead of slapping transforms on there (see above)
 # Or don't. See what feels best.
 screen dressing_room(outfits):
 

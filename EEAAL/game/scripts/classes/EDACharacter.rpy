@@ -1,19 +1,24 @@
 init python:
-    class Adam:
-        def __init__(self, character):
-            self.name = "Adam" # This does not change
-            
-            self.c = character
-            self.p = Pronouns()
-            
-            # This is a test version of what will hopefully be a more refined system in the future
-            # 0 = Assertive, 1 = Confident, 2 = Pensive
+    class EDACharacter:
+
+        def __init__(self, name):
+            self.name = name
+            self.pronouns = Pronouns()
             self.personality = 0
+            self.outfit = "DNE"
             
-            self.outfit = "Adam_Outfit_NPC"
+            self.c = Character(name)
             
-            self.outfits = ["None", "Adam_Outfit_NPC", "Adam_Outfit_Blue", "Adam_Outfit_Red"]
-        
+            self.attributes = dict()
+            
+            
+# HELPERS
+        def SetName(self, name):
+            self.name = name
+            self.c.name = name
+
+                
+# PERSONALITY V 1
         # These are the methods we will be using to handle the test version of our personality system
         def SetPersonality(self, new_personality):
             if new_personality > -1 and new_personality < 3:
@@ -24,8 +29,47 @@ init python:
             return self.personality == 2
         def ConfidentPersonality(self):
             return self.personality == 1  
+
+
+
+
+
+# GENERIC ATTRIBUTE TRACKING
+        def Add(self, attrname, attrval):
+            self.attributes[attrname] = attrval
+        
+        def Set(self, attrname, attrval):
+            if (attrname in self.attributes):
+                self.attributes[attrname] = attrval
+            else:
+                 renpy.jump_out_of_context("Set FAIL")
+        
+        def Get(self, attrname):
+            if (attrname in self.attributes):
+                return self.attributes[attrname]
+            return "DNE"      
+            
+        # Simple arithmetic helpers
+        def Plus(self, attrname, plus):
+            attrval = self.Get(attrname)
+            if (attrval != "DNE"):
+                self.Set(attrname, attrval + plus)
+            else:
+                renpy.jump_out_of_context("Plus FAIL")
+        
+        def Minus(self, attrname, minus):
+            attrval = self.Get(attrname)
+            if (attrval != "DNE"):
+                self.Set(attrname, attrval - minus)
+            else:
+                renpy.jump_out_of_context("Minus FAIL")
         
         
+            
+            
+            
+            
+# PRONOUN MANAGEMENT
         def SetPronouns(self, new_pronoun):
             self.p = new_pronoun
         
@@ -116,3 +160,4 @@ init python:
         @property
         def THEYD(self):
             return self.p.THEYD
+            

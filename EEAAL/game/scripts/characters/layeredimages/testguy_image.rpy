@@ -1,14 +1,3 @@
-# Create a well defined name and object for the character
-
-define testguy = Character("Test Guy", color="#FCFC00", what_color="#0092AD")
-
-# Character specific variables go here
-
-define testguy_inches = 3
-define testguy_fitchoice = "white"
-
-# End Character specific vars
-
 # Custom images
 
 image testguy_blink:
@@ -24,7 +13,7 @@ image testguy_blink:
     repeat
     
 image testguy_outfit:
-    "images/testguy/[testguy_fitchoice]_body.png"
+    "images/testguy/[TestGuy.Get('testguy_fitchoice')]_body.png"
 
 # End Custom images
 
